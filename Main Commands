@@ -19,5 +19,8 @@ async def on_message(message):
     if message.content.startswith('$puns'):
         puns = Dadjoke()
         await message.channel.send(puns.joke)
+        
+    if message.content.startswith('$ehe'):
+    await message.channel.send('https://tenor.com/view/nandayo-gif-18919523')
 
 client.run('TOKEN')
