@@ -7,6 +7,14 @@ client = commands.Bot(command_prefix='$')
 @client.event
 async def on_ready():
     print(f'Logged in as {client.user}')
+    
+@client.event
+async def on_member_join(member):
+    print(f'Welcome, {member}! Woof!')
+
+@client.event
+async def on_member_remove(member):
+    print(f'{member} has left')
 
 @client.event
 async def on_message(message):
