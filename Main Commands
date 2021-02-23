@@ -8,7 +8,7 @@ client = commands.Bot(command_prefix='$')
 @client.event
 async def on_ready():
     print(f'Logged in as {client.user}')
-    
+
 @client.event
 async def on_member_join(member):
     print(f'{member} has joined')
@@ -20,7 +20,7 @@ async def on_member_remove(member):
 @client.command()
 async def clear(ctx, amount=10):
     await ctx.channel.purge(limit=amount)
-    
+
 @client.command()
 async def yeet(ctx, member: discord.Member, *, reason=None):
     await member.kick(reason=reason)
@@ -30,18 +30,23 @@ async def ban(ctx, member: discord.Member, *, reason=None):
     await member.ban(reason=reason)
 
 @client.command()
-async def hello(ctx):
-    await ctx.send('Woof!')
-
-@client.command()
 async def coin(ctx):
     result = ['heads', 'tails']
     await ctx.send(f'You got {random.choice(result)}!')
 
 @client.command()
+async def selfie(ctx):
+    yuki_pics = []
+    await ctx.send(random.choice(yuki_pics))
+
+@client.command()
 async def puns(ctx):
     puns = Dadjoke()
     await ctx.send(puns.joke)
+
+@client.command()
+async def hello(ctx):
+    await ctx.send('Woof!')
 
 @client.command()
 async def ehe(ctx):
