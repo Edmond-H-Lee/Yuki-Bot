@@ -17,18 +17,25 @@ async def on_member_remove(member):
     print(f'{member} has left')
 
 @client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
+async def clear(ctx, amount=10):
+    await ctx.channel.purge(limit=amount)
 
-    if message.content.startswith('$hello'):
-        await message.channel.send('Woof!')
+@client.command()
+async def hello(ctx):
+    await ctx.send('Woof!')
 
-    if message.content.startswith('$puns'):
-        puns = Dadjoke()
-        await message.channel.send(puns.joke)
-        
-    if message.content.startswith('$ehe'):
-        await message.channel.send('https://tenor.com/view/nandayo-gif-18919523')
+@client.command()
+async def coin(ctx):
+    result = ['heads', 'tails']
+    await ctx.send(f'You got {random.choice(result)}!')
+
+@client.command()
+async def puns(ctx):
+    puns = Dadjoke()
+    await ctx.send(puns.joke)
+
+@client.command()
+async def ehe(ctx):
+    await ctx.send('https://tenor.com/view/nandayo-gif-18919523')
 
 client.run('TOKEN')
