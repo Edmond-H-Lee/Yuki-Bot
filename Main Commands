@@ -17,7 +17,7 @@ async def on_member_join(member):
 async def on_member_remove(member):
     print(f'{member} has left')
 
-@client.event
+@client.command()
 async def clear(ctx, amount=10):
     await ctx.channel.purge(limit=amount)
     
