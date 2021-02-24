@@ -9,3 +9,4 @@ def yuki_answers():
                'Bork!, try asking again'
                'Ehhh...maybe? Bork'
                "Unfortunately that will never happen. It is not my senses, I just don't think it will work"]
+    return answers
