@@ -8,5 +8,6 @@ def yuki_answers():
                'My doggo senses is telling me no'
                'Bork!, try asking again'
                'Ehhh...maybe? Bork'
+               "I don't know, I'm just a dog ;-;"
                "Unfortunately that will never happen. It is not my senses, I just don't think it will work"]
     return answers
