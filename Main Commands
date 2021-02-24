@@ -1,6 +1,7 @@
 import random
 import discord
 from discord.ext import commands
+from bot_lists import yuki_selfies
 from dadjokes import Dadjoke
 
 client = commands.Bot(command_prefix='$')
@@ -36,7 +37,7 @@ async def coin(ctx):
 
 @client.command()
 async def selfie(ctx):
-    yuki_pics = []
+    yuki_pics = yuki_selfies()
     await ctx.send(random.choice(yuki_pics))
 
 @client.command()
