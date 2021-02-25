@@ -61,5 +61,9 @@ async def hello(ctx):
 @client.command()
 async def ehe(ctx):
     await ctx.send('https://tenor.com/view/nandayo-gif-18919523')
+    
+@client.command()
+async def bakamitai(ctx):
+    await ctx.send('https://tenor.com/view/yakusa-bakamitai-baka-gif-17961963')
 
 client.run('TOKEN')
