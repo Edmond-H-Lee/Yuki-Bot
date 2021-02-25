@@ -24,10 +24,12 @@ async def clear(ctx, amount=10):
     await ctx.channel.purge(limit=amount)
 
 @client.command()
+@commands.has_permissions(kick_members=True)
 async def yeet(ctx, member: discord.Member, *, reason=None):
     await member.kick(reason=reason)
 
 @client.command()
+@commands.has_permissions(ban_members=True)
 async def ban(ctx, member: discord.Member, *, reason=None):
     await member.ban(reason=reason)
 
