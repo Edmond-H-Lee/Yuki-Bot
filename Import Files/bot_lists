@@ -1,1 +1,13 @@
+def yuki_selfies():
+    yuki_pic = ['test 1', 'test 2', 'test 3']
+    return yuki_pic
 
+def yuki_answers():
+    answers = ['My doggo senses is telling me yes'
+               'My doggo senses is saying it will definitely happen! '
+               'My doggo senses is telling me no'
+               'Bork!, try asking again'
+               'Ehhh...maybe? Bork'
+               "I don't know, I'm just a dog ;-;"
+               "Unfortunately that will never happen. It is not my senses, I just don't think it will work"]
+    return answers
