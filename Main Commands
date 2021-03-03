@@ -1,3 +1,4 @@
+import os
 import random
 import asyncio
 import discord
@@ -48,6 +49,26 @@ async def unban(ctx, *, member):
             await ctx.guild.unban(user)
             await ctx.send(f'{user.mention} is now unbanned')
             return
+            
+@client.command()
+async def load(ctx, extension):
+    client.load_extension(f'cogs.{extension}')
+    await ctx.send(f'Loaded {extension}')
+
+@client.command()
+async def unload(ctx, extension):
+    client.unload_extension(f'cogs.{extension}')
+    await ctx.send(f'Unloaded {extension}')
+
+@client.command()
+async def reload(ctx, extension):
+    client.unload_extension(f'cogs.{extension}')
+    client.load_extension(f'cogs.{extension}')
+    await ctx.send(f'Reloaded {extension}')
+
+for files in os.listdir('./cogs'):
+    if files.endswith('.py'):
+        client.load_extension(f'cogs.{files[:-3]}')
 
 @client.command()
 async def timer(ctx, seconds):
