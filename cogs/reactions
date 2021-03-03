@@ -26,7 +26,7 @@ class Bakamitai(commands.Cog):
     async def bakamitai(self, ctx):
         await ctx.send('https://tenor.com/view/yakusa-bakamitai-baka-gif-17961963')
 
-class Dadjoke(commands.Cog):
+class Puns(commands.Cog):
     def __init__(self, client):
         self.client = client
 
@@ -39,4 +39,4 @@ def setup(client):
     client.add_cog(Hello(client))
     client.add_cog(Ehe(client))
     client.add_cog(Bakamitai(client))
-    client.add_cog(Dadjoke(client))
+    client.add_cog(Puns(client))
