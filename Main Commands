@@ -66,21 +66,4 @@ for files in os.listdir('./cogs'):
     if files.endswith('.py'):
         client.load_extension(f'cogs.{files[:-3]}')
 
-@client.command()
-async def puns(ctx):
-    puns = Dadjoke()
-    await ctx.send(puns.joke)
-
-@client.command()
-async def hello(ctx):
-    await ctx.send('Woof!')
-
-@client.command()
-async def ehe(ctx):
-    await ctx.send('https://tenor.com/view/nandayo-gif-18919523')
-    
-@client.command()
-async def bakamitai(ctx):
-    await ctx.send('https://tenor.com/view/yakusa-bakamitai-baka-gif-17961963')
-
 client.run('TOKEN')
