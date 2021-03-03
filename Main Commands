@@ -71,32 +71,6 @@ for files in os.listdir('./cogs'):
         client.load_extension(f'cogs.{files[:-3]}')
 
 @client.command()
-async def timer(ctx, seconds):
-    try:
-        stopwatch = int(seconds)
-        if stopwatch > 900:
-            await ctx.send('Cannot go above 900 seconds')
-            raise BaseException
-
-        if stopwatch <= 0:
-            await ctx.send('Cannot use negative numbers')
-            raise BaseException
-
-        message = await ctx.send(f'Timer: {seconds}')
-        
-        while True:
-            stopwatch -= 1
-            if stopwatch == 0:
-                await message.edit(content="Time's up!")
-                break
-            await message.edit(content=f'Time: {stopwatch}')
-            await asyncio.sleep(1)
-        await ctx.send(f'{ctx.author.mention} Your timer has ended')
-        
-    except ValueError:
-        await ctx.send('Invalid command, please use a number')
-
-@client.command()
 async def coin(ctx):
     result = ['heads', 'tails']
     await ctx.send(f'You got {random.choice(result)}!')
