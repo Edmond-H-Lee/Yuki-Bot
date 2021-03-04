@@ -11,6 +11,6 @@ def yuki_answers():
                "Unfortunately that will never happen. It's not my senses, I just don't think it will work",
                'Ehhh...maybe? Bork',
                "I don't know, I'm just a dog ;-;",
-               '¯\_(ツ)_/¯'
+               '¯\_(ツ)_/¯',
                'Bork!, try asking again']
     return answers
