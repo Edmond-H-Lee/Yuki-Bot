@@ -9,6 +9,14 @@ class Hello(commands.Cog):
     @commands.command()
     async def hello(self, ctx):
         await ctx.send('Woof!')
+        
+class Paw(commands.Cog):
+    def __init__(self, client):
+        self.client = client
+
+    @commands.command()
+    async def paw(self, ctx, member: discord.Member):
+            await ctx.send(f'*Paws {member}*')
 
 class Ehe(commands.Cog):
     def __init__(self, client):
@@ -37,6 +45,7 @@ class Puns(commands.Cog):
 
 def setup(client):
     client.add_cog(Hello(client))
+    client.add_cog(Paw(client))
     client.add_cog(Ehe(client))
     client.add_cog(Bakamitai(client))
     client.add_cog(Puns(client))
