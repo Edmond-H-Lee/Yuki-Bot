@@ -18,6 +18,11 @@ async def on_member_join(member):
 async def on_member_remove(member):
     print(f'{member} has left')
 
+@client.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.CommandNotFound):
+        await ctx.send('Command not found')
+
 @client.command()
 @commands.has_permissions(administrator=True)
 async def clear(ctx, amount=10):
