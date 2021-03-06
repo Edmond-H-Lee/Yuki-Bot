@@ -31,6 +31,11 @@ class Timer(commands.Cog):
 
         except ValueError:
             await ctx.send('Invalid command, please use a number')
+            
+    @timer.error
+    async def timer_error(self, ctx, error):
+        if isinstance(error, commands.MissingRequiredArgument):
+            await ctx.send('Please enter an amount in seconds')
 
 def setup(client):
     client.add_cog(Timer(client))
