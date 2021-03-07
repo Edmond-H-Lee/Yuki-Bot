@@ -5,7 +5,7 @@ def yuki_selfies():
 def yuki_answers():
     answers = ['My doggo senses is telling me yes',
                'My doggo senses is saying it will definitely happen!',
-               'Yuki says yes!'
+               'Yuki says yes!',
                'My doggo senses is telling me no',
                'Yuki says no',
                "Unfortunately that will never happen. It's not my senses, I just don't think it will work",
